@@ -1,8 +1,9 @@
 import { Snackbar, Button } from '@mui/material';
+import type { SnackbarCloseReason } from '@mui/material/Snackbar';
 
 interface Props {
   open: boolean;
-  onClose: () => void;
+  onClose: (event: unknown, reason?: SnackbarCloseReason) => void; // <-- change
   onUndo: () => void;
 }
 
@@ -18,5 +19,3 @@ export default function UndoSnackbar({ open, onClose, onUndo }: Props) {
     />
   );
 }
-
-
